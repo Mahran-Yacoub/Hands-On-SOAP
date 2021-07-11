@@ -1,0 +1,65 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+
+           xmlns:tns="http://soap.example.com/spring-boot-soap"
+           targetNamespace="http://soap.example.com/spring-boot-soap"
+           elementFormDefault="qualified">
+
+    <xs:element name="getUserIDRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+                <xs:element name="status" type ="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="customer" type="tns:customer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getMessageResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="message" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+
+    <xs:complexType name="customer">
+
+        <xs:sequence>
+            <xs:element name="id" type="xs:int" />
+            <xs:element name="firstName" type="xs:string" />
+            <xs:element name="lastName" type="xs:string" />
+            <xs:element name="status" type="xs:string" />
+        </xs:sequence>
+
+    </xs:complexType>
+
+    <xs:element name="getAllRequest">
+        <xs:complexType>
+            <xs:sequence>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:element name="getAllResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="allCustomer" />
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element>
+
+
+</xs:schema>

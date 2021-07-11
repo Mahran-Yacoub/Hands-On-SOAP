@@ -1,4 +1,5 @@
-package com.example.SpringMongoDB;
+package com.example.soap;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringMongoDbApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(SpringMongoDbApplication.class, args);
-	}
+        SpringApplication.run(SpringMongoDbApplication.class, args);
+    }
 
 }

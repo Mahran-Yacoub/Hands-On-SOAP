@@ -1,7 +1,7 @@
-package com.example.SpringMongoDB.controllers;
+package com.example.soap.controllers;
 
-import com.example.SpringMongoDB.models.Customer;
-import com.example.SpringMongoDB.repo.Repository;
+import com.example.soap.endpoint.Repository;
+import com.example.soap.spring_boot_soap.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,7 +54,7 @@ public class Contoller {
             updatedCustomer.setFirstName(customer.getFirstName());
             updatedCustomer.setLastName(customer.getLastName());
 
-            repo.save(customer);
+            repo.save(updatedCustomer);
 
             return new ResponseEntity<Customer>(HttpStatus.OK);
 
