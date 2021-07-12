@@ -21,6 +21,7 @@ public class SoapWebServiceConfig extends WsConfigurerAdapter {
         MessageDispatcherServlet servlet = new MessageDispatcherServlet();
         servlet.setApplicationContext(context);
         servlet.setTransformWsdlLocations(true);
+        // server:port/customers/*
         return new ServletRegistrationBean(servlet, "/customers/*");
     }
 
@@ -28,10 +29,11 @@ public class SoapWebServiceConfig extends WsConfigurerAdapter {
     @Bean
     public XsdSchema userSchema() {
 
-        return new SimpleXsdSchema(new ClassPathResource("users.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("customers.xsd"));
     }
 
-    @Bean(name = "customers")
+    // WSDL Document will be in server:port/customers/soap.wsdl
+    @Bean(name = "soap")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema userSchema) {
 
         DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
