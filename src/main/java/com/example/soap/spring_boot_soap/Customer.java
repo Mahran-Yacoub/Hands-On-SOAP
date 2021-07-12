@@ -8,10 +8,7 @@
 
 package com.example.soap.spring_boot_soap;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
@@ -41,6 +38,7 @@ import javax.xml.bind.annotation.XmlType;
     "firstName",
     "lastName"
 })
+@XmlRootElement(name = "customer")
 public class Customer {
 
     protected int id;
@@ -113,4 +111,12 @@ public class Customer {
         this.lastName = value;
     }
 
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 }

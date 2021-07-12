@@ -56,6 +56,7 @@ public class CustomerEndPoint {
             localPart = "getOrDeleteCustomerIDRequest")
     @ResponsePayload
     public Customer getOrDeleteCustomer(@RequestPayload GetOrDeleteCustomerIDRequest request) {
+
         int id = request.getId();
         int status = request.getStatus();
 
@@ -158,6 +159,7 @@ public class CustomerEndPoint {
     private Customer updateCustomer(Customer customer) {
 
         int id = customer.getId();
+        System.out.println(id);
 
         if (!repositoryDB.existsById(id)) {
             return new Customer();
